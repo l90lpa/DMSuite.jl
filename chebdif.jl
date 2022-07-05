@@ -36,7 +36,7 @@ function chebdif(N, M)
     k = (0:N-1)                                      # Compute theta vector.
     th = k*pi/(N-1)
     
-    x = sin.(pi * (N-1:-2:1-N)' / (2*(N-1)));        # Compute Chebyshev points.
+    x = (sin.(pi * (N-1:-2:1-N)' / (2*(N-1))))';        # Compute Chebyshev points.
     
     T = repeat(th/2,1,N);                
     DX = 2 * sin.(T'+T) .* sin.(T'-T);               # Trigonometric identity. 
