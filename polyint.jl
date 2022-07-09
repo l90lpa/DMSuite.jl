@@ -28,7 +28,7 @@ function polint(xk, fk, x, alpxk, alpx)
 
     fk = fk./alpxk
     
-    x = x[:]                          # Make sure the data are column vectors
+    x = x[:]                              # Make sure the data are column vectors
     xk = xk[:];  fk = fk[:]
     alpxk = alpxk[:]; alpx = alpx[:]
 
@@ -39,11 +39,11 @@ function polint(xk, fk, x, alpxk, alpx)
     D[diagind(D)] .= 1 
     w = 1 ./ prod(D,dims=1)'                       
  
-    D = repeat(x,1,N) - repeat(xk,1,M)' # Compute quantities x-x[k] 
-    D = 1 ./ (D .+ (eps() * (D==0)))                 # & their reciprocals. 
+    D = repeat(x,1,N) - repeat(xk,1,M)'   # Compute quantities x-x[k] & their reciprocals. 
+    D = 1 ./ (D .+ (eps() * (D==0)))                 
   
-    p = alpx .* (D*(w .* fk) ./ (D*w))          # Evaluate interpolant as
-                                            # matrix-vector products.
+    p = alpx .* (D*(w .* fk) ./ (D*w))    # Evaluate interpolant as matrix-vector products.
+                                            
 
     return p
 end
