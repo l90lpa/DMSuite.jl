@@ -1,4 +1,4 @@
-using FFTW
+using AbstractFFTs
 
 function sincdifft(f, M, h)
 
