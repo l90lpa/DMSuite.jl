@@ -1,4 +1,4 @@
-using FFTW
+using AbstractFFTs
 
 function chebdifft(f,M)
 

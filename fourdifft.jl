@@ -1,5 +1,5 @@
 using LinearAlgebra
-using FFTW
+using AbstractFFTs
 
 function fourdifft(f,m)
 

@@ -1,6 +1,6 @@
 using LinearAlgebra
 using ToeplitzMatrices
-using FFTW
+using AbstractFFTs
 
 function fourdif(N,m)
 #
