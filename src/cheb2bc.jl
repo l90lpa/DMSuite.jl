@@ -1,7 +1,7 @@
 using LinearAlgebra
 include("chebdif.jl")
 
-# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+
 """
     cheb2bc(N,g)
 

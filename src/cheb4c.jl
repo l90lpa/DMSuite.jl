@@ -1,6 +1,6 @@
 using LinearAlgebra
 
-# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+
 """
     cheb4c(N)
 
