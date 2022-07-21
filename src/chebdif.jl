@@ -22,13 +22,11 @@ identities to avoid the computation of differences
 x[k]-x[j] & (b) the use of the "flipping trick"
 which is necessary since sin t can be computed to high
 relative precision when t is small whereas sin(pi-t) cannot.
-Note: It may, in fact, be slightly better not to
-implement the strategies (a) & (b).   Please consult the following
-paper for details:   "Spectral Differencing with a Twist", by
-R. Baltensperger & M.R. Trummer, to appear in SIAM J. Sci. Comp.
 """
 function chebdif(N, M)
 
+    #Note: It may, be slightly better not to implement the strategies (a) & (b). See the following
+    #      paper for details: "Spectral Differencing with a Twist", by R. Baltensperger & M.R. Trummer.
     
     n1 = Int64(floor(N/2)); n2  = Int64(ceil(N/2));  # Indices used for flipping trick.
     

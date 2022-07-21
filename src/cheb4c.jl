@@ -74,5 +74,4 @@ function cheb4c(N)
     D4 = DM[:,:,4];                  # Extract fourth derivative matrix
 
    x, D4
-
 end
