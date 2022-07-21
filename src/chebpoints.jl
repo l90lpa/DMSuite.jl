@@ -1,6 +1,6 @@
 
 """
-    cheb1roots(N)
+    cheb1Roots(N)
 
 Computes the roots of the Chebyshev polynomial of the first kind of degree N. AKA, Chebyshev-Gauss (CG) Points.
 """
