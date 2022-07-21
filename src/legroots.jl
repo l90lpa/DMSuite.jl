@@ -12,5 +12,5 @@ function legroots(N);
     J = SymTridiagonal(zeros(N), d) # Jacobi matrix
     r = eigvals(J)                  #  Compute eigenvalues
 
-    return r
+    r
 end

@@ -39,5 +39,5 @@ function herdif(N, M, b)
         DM[:,:,ell] .*= (b^ell)
     end
     
-    return x, DM
+    x, DM
 end

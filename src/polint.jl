@@ -48,7 +48,7 @@ function polint(xk, fk, x, alpxk, alpx)
     p = alpx .* (D*(w .* fk) ./ (D*w))    # Evaluate interpolant as matrix-vector products.
                                             
 
-    return p
+    p
 end
 
 """
@@ -74,5 +74,5 @@ function polint(xk, fk, x)
     alpxk = ones(Float64, length(xk))
     alpx = ones(Float64, length(x))
     
-    return polint(xk,fk,x,alpxk,alpx)    
+    polint(xk,fk,x,alpxk,alpx)    
 end

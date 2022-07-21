@@ -41,5 +41,5 @@ function chebdifft(f,M)
     if maximum(abs.(imag.(f))) == 0           # Real data in real derivative out
         Dmf = real(Dmf)                
     end    
-    return Dmf
+    Dmf
 end

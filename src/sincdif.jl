@@ -32,5 +32,5 @@ function sincdif(N, M, h)
         DM[:,:,ell] = Matrix(Toeplitz(col,row))
     end
     
-    return x, DM
+    x, DM
 end

@@ -99,7 +99,7 @@ function computeMatlabResults(s,outNames,funcname,args,argNames)
         r = jarray(get_mvariable(s, Symbol(outNames[i])))
         push!(outVars, r)
     end
-    return outVars
+    outVars
 end
 
 function writeCompTest(file,varname1,varname2,tol)

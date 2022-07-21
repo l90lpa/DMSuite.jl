@@ -70,5 +70,5 @@ function fourdif(N,M)
     end
     DM = Matrix(Toeplitz(col1,row1));                   
 
-    return x, DM
+    x, DM
 end

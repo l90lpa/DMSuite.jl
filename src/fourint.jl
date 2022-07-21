@@ -42,5 +42,5 @@ function fourint(fk, x)
     
     t = D*(w .* fk) ./ (D*w)            # Evaluate interpolant as matrix-vector products.
 
-    return t
+    t
 end

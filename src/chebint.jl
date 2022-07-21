@@ -21,7 +21,7 @@ P. Henrici; Essentials of Numerical Analysis; Wiley; 1982.
 function chebint(fk, x)
     # Note: that if some fk > 1/eps, with eps the machine epsilon 
     # the value of eps in the code may have to be reduced.
-    
+
     fk = fk[:]; x = x[:];                       # Make sure data are column vectors.
     
     N = length(fk); 
@@ -37,5 +37,5 @@ function chebint(fk, x)
       
     p = D*(w .* fk) ./ (D*w);                   # Evaluate interpolant as matrix-vector products.
     
-    return p
+    p
 end

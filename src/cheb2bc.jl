@@ -166,5 +166,5 @@ function cheb2bc(N,g)
 
     end
 
-    return xt,D2t,D1t,phip,phim
+    xt,D2t,D1t,phip,phim
 end

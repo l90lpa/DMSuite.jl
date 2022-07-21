@@ -59,5 +59,5 @@ function chebdif(N, M)
         DM[:,:,ell] = D;                             # Store current D in DM
     end
     
-    return x, DM
+    x, DM
 end

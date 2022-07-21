@@ -51,7 +51,7 @@ function poldif(x, alpha, B)
         DM[:,:,ell] = D                                          # Store the current D
     end
 
-    return DM
+    DM
 end
 
 """
@@ -73,5 +73,5 @@ function poldif(x, M)
     alpha = ones(N)              
     B = zeros(Float64,M,N)
 
-    return poldif(x, alpha, B)
+    poldif(x, alpha, B)
 end
