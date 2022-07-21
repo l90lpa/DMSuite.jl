@@ -34,7 +34,7 @@ function cheb4c(N)
     k = 1:N-2;                             # Compute theta vector.
     th = k*pi/(N-1);                 
 
-    x = (sin.(pi* (N-3:-2:3-N)/(2*(N-1)))); # Compute interior Chebyshev points.
+    x = cheb1Extrema(N-1)[2:end-1] # interior Chebyshev points.
 
     s = [sin.(th[1:n1]); reverse(sin.(th[1:n2]))];   # s = sin(theta, dims = 1)
                                

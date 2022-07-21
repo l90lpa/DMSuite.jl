@@ -1,10 +1,11 @@
 module DMSuite
 
-export chebdif, chebdifft, chebint, cheb2bc, cheb4c, 
+export cheb1roots, cheb1extrema, chebdif, chebdifft, chebint, cheb2bc, cheb4c, 
        fourdif, fourdifft, fourint, sincdif, sincdifft, 
        herroots, lagroots, legroots, poldif, polint, 
        herdif, lagdif
     
+    include("chebpoints.jl")
     include("chebdif.jl")
     include("chebdifft.jl")
     include("chebint.jl")
