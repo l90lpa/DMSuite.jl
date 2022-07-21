@@ -1,23 +1,25 @@
-function fourint(fk, x)
 
-#  The function t = fourint(fk, x) computes the trigonometric interpolant
-#  of the data [xk, fk], where xk are equidistant nodes.
-#
-#  Input:
-#  fk:  Vector of y-coordinates of data; at equidistant points 
-#       x[k] = (k-1)*2*pi/N,  k = 1...N.
-#  x:   Vector of x-values where interpolant is to be evaluated.
-#
-#  Output:
-#  t:    Vector of interpolated values.
-#
-#  The code implements the barycentric formula; see page 46 in
-#  P. Henrici; Applied & Computational Complex Analysis III; Wiley; 1986.
-#  (Note that if some fk .> 1/eps, with eps the machine epsilon
-#  the value of eps in the code may have to be reduced.)
-#
-#  J.A.C. Weideman; S.C. Reddy 1998
-    
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+"""
+    fourint(fk, x)
+
+Evaluates the trigonometric interpolant of the data (xk[j], fk[j]), where
+xk are equidistant nodes, at the points x. Requires two or more data points
+
+# Arguments
+- fk:  vector of y-coordinates of data, at equidistant points xk[j] = (j-1)*2*pi/N,  j = 1...N.
+- x:   vector of x-values where interpolant is to be evaluated.
+
+# Outputs
+- t:    vector of interpolated values.
+
+# Details
+The code implements the barycentric formula; see page 46 in
+P. Henrici; Applied & Computational Complex Analysis III; Wiley; 1986.
+(Note that if some fk .> 1/eps, with eps the machine epsilon
+the value of eps in the code may have to be reduced.)
+"""
+function fourint(fk, x)
     
     fk = fk[:]; x = x[:];           # Make sure data are column vectors.
         

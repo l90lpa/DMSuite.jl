@@ -1,30 +1,30 @@
 using LinearAlgebra
 include("chebdif.jl")
 
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+"""
+    cheb2bc(N,g)
+
+Computes the first and second derivative matrices, as well as boundary condition functions, 
+for 2 point boundary conditions:
+
+a_1 u[1]  + b_1 u'(1)  = c_1
+
+a_N u[-1] + b_N u'(-1) = c_N
+
+
+# Arguments 
+- N:  number of Chebyshev points in [-1,1]
+- g:  boundary condition matrix = [a_1 b_1 c_1; a_N b_N c_N]
+
+# Outputs  
+- xt:  Chebyshev points corresponding to rows and columns of D1t & D2t
+- D1t:  1st derivative matrix incorporating bc
+- D2t:  2nd derivative matrix incorporating bc
+- phip:  1st & 2nd derivative of bc function at x=1 (array with 2 columns)
+- phim:  1st & 2nd derivative of bc function at x=-1 (array with 2 columns)
+"""
 function cheb2bc(N,g)
-
-# Program for computing first and second derivative matrices &
-# and boundary condition functions for 2 point boundary conditions
-#
-#  a_1 u[1]  + b_1 u'(1)  = c_1
-#  a_N u[-1] + b_N u'(-1) = c_N
-#
-#
-# INPUT 
-# N        =  number of Chebyshev points in [-1,1]
-# g        =  boundary condition matrix = [a_1 b_1 c_1; a_N b_N c_N]
-# 
-# OUTPUT  
-# xt       =  Chebyshev points corresponding to rows && columns
-#             of D1t & D2t
-# D1t      =  1st derivative matrix incorporating bc
-# D2t      =  2nd derivative matrix incorporating bc
-# phip     =  1st & 2nd derivative of bc function at x=1
-#             (array with 2 columns)
-# phim     =  1st & 2nd derivative of bc function at x=-1 
-#             (array with 2 columns)
-
-# S.C. Reddy; J.A.C. Weideman  1998
 
 
     # Get differentiation matrices

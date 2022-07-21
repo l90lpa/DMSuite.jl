@@ -1,29 +1,32 @@
 using LinearAlgebra
 
-function cheb4c(N)
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+"""
+    cheb4c(N)
 
-#  The function [x, D4] =  cheb4c(N) computes the fourth 
-#  derivative matrix on Chebyshev interior points; incorporating 
-#  the clamped boundary conditions u[1]=u"(1)=u[-1]=u"(-1)=0.
-#
-#  Input:
-#  N:     N-2 = Order of differentiation matrix.  
-#               (The interpolant has degree N+1.)
-#
-#  Output:
-#  x:      Interior Chebyshev points [vector of length N-2]
-#  D4:     Fourth derivative matrix  [size (N-2)x[N-2]]
-#
-#  The code implements two strategies for enhanced 
-#  accuracy suggested by W. Don & S. Solomonoff in 
-#  SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 [1994].
-#  The two strategies are [a] the use of trigonometric 
-#  identities to avoid the computation of differences 
-#  x[k]-x[j] & [b] the use of the "flipping trick"
-#  which is necessary since sin t can be computed to high
-#  relative precision when t is small whereas sin (pi-t) cannot.
-   
-#  J.A.C. Weideman; S.C. Reddy 1998.
+Computes the fourth derivative matrix on Chebyshev interior points, incorporating 
+the clamped boundary conditions:
+
+u[1]=u"(1)=u[-1]=u"(-1)=0.
+
+# Arguments
+- N:     N-2 = order of differentiation matrix. (The interpolant has degree N+1.)
+
+# Outputs
+- x:      interior Chebyshev points [vector of length N-2]
+- D4:     fourth derivative matrix  [size (N-2)x[N-2]]
+
+# Details
+The code implements two strategies for enhanced 
+accuracy suggested by W. Don & S. Solomonoff in 
+SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 [1994].
+The two strategies are [a] the use of trigonometric 
+identities to avoid the computation of differences 
+x[k]-x[j] & [b] the use of the "flipping trick"
+which is necessary since sin t can be computed to high
+relative precision when t is small whereas sin (pi-t) cannot.
+"""
+function cheb4c(N)
 
     n1 = Int64(floor(N/2-1))               # n1, n2 are indices used 
     n2 = Int64(ceil(N/2-1))                # for the flipping trick.

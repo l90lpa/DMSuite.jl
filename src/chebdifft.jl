@@ -1,24 +1,26 @@
 using AbstractFFTs
 
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+"""
+    chebdifft(f,M)
+
+Computes the M'th approximate Chebyshev derivatives of the data vector f, using the FFT.
+
+# Arguments
+- f: vector of length N containing function values at the Chebyshev points x[k] = cos((k-1)*pi/(N-1)), k = 1...N.
+- M: derivative required [positive integer]
+    
+# Outputs
+- Dmf: vector containing approximate M'th derivative
+
+# Details
+A Fast Fourier Transform is used compute the Chebyshev cofficients
+of the data vector. A recursion formula is used to compute the
+Chebyshev coefficients for each derivative. A FFT is then used again
+to compute the derivatives in physical space.
+"""
 function chebdifft(f,M)
 
-# The function Dmf = chebdifft(f,M) computes the M'th
-# approximate Chebyshev derivatives of the data vector y.
-# A Fast Fourier Transform is used compute the Chebyshev cofficients
-# of the data vector. A recursion formula is used to compute the
-# Chebyshev coefficients for each derivative. A FFT is then used again
-# to compute the derivatives in physical space.
-# 
-#  Input:
-#  f:        Vector containing function values at the Chebyshev points
-#            x[k] = cos((k-1)*pi/(N-1)), k = 1...N.
-#  M:        Derivative required [positive integer]
-#
-#  Output:
-#  Dmf:       Vector containing approximate M'th derivative
-#            
-#  J.A.C. Weideman; S.C. Reddy 2000.  
-    
     f=f[:];                                      # Make sure f is a vector     
     N=length(f);      
     a0=fft([f; reverse(f[2:N-1], dims = 1)]);    # Extend & compute fft()

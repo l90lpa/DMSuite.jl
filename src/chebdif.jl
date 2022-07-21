@@ -1,17 +1,21 @@
 using LinearAlgebra
 using ToeplitzMatrices
 
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
 """
-The function, chebdif, computes the differentiation matrices D1; D2; ...; DM on Chebyshev nodes. 
+    chebdif(N, M)
 
-#Arguments:
-- N:        Size of differentiation matrix.        
-- M:        Number of derivatives required [integer]. Note: 0 < M <= N-1.
+Computes the differentiation matrices D^1, D^2, ..., D^M on Chebyshev nodes. 
 
-#Outputs:
-- x:        The Chebyshev nodes
-- DM:       DM[1:N,1:N,ell] contains ell-th derivative matrix, ell=1..M.
+# Arguments 
+- N:        size of differentiation matrix.        
+- M:        number of derivatives required [integer]. Note: 0 < M <= N-1.
 
+# Outputs 
+- x:        the Chebyshev nodes.
+- DM:       DM[1:N,1:N,ell] contains ell-th derivative matrix, ell=1,...,M.
+
+# Details 
 The code implements two strategies for enhanced 
 accuracy suggested by W. Don & S. Solomonoff in 
 SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 [1994].
@@ -24,8 +28,7 @@ Note added May 2003:  It may; in fact; be slightly better not to
 implement the strategies [a] & [b].   Please consult the following
 paper for details:   "Spectral Differencing with a Twist"; by
 R. Baltensperger & M.R. Trummer; to appear in SIAM J. Sci. Comp. 
-J.A.C. Weideman; S.C. Reddy 1998.  Help notes modified by 
-JACW; May 2003.
+J.A.C. Weideman; S.C. Reddy 1998.
 """
 function chebdif(N, M)
 

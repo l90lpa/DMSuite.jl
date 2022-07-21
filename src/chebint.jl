@@ -1,23 +1,26 @@
-function chebint(fk, x)
 
-#  The function p = chebint(fk, x) computes the polynomial interpolant
-#  of the data [xk, fk], where xk are the Chebyshev nodes.  
-#  Two | more data points are assumed.
-#
-#  Input:
-#  fk:  Vector of y-coordinates of data; at Chebyshev points 
-#       x[k] = cos((k-1)*pi/(N-1)), k = 1...N.
-#  x:   Vector of x-values where polynomial interpolant is to be evaluated.
-#
-#  Output:
-#  p:    Vector of interpolated values.
-#
-#  The code implements the barycentric formula; see page 252 in
-#  P. Henrici; Essentials of Numerical Analysis; Wiley; 1982.
-#  (Note that if some fk .> 1/eps, with eps the machine epsilon
-#  the value of eps in the code may have to be reduced.)
-#
-#  J.A.C. Weideman; S.C. Reddy 1998
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+"""
+    chebint(fk, x)
+
+Evaluates the polynomial interpolant of the data points (xk[j], fk[j]), where 
+xk[j] are the Chebyshev nodes, at the points x. 
+Requires two or more data points.
+
+# Arguments 
+- fk: vector of y-coordinates of data; at Chebyshev points xk[j] = cos((j-1)*pi/(N-1)), j = 1...N.
+- x: vector of x-values where polynomial interpolant is to be evaluated.
+
+# Outputs
+- p: vector of interpolated values.
+
+# Details
+The code implements the barycentric formula; see page 252 in
+P. Henrici; Essentials of Numerical Analysis; Wiley; 1982.
+(Note that if some fk .> 1/eps, with eps the machine epsilon
+the value of eps in the code may have to be reduced.)
+"""
+function chebint(fk, x)
     
     fk = fk[:]; x = x[:];                       # Make sure data are column vectors.
     

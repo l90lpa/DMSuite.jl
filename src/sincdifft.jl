@@ -1,25 +1,24 @@
 using AbstractFFTs
 
-function sincdifft(f, M, h)
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
 
-#  Dmf = sincdifft(f, M, h) computes the m-th derivative of the function
-#  f[x] using the sinc differentiation process.   The function is() 
-#  assumed to be defined on the entire real line & the input values
-#  correspond to samples of the function at N equispaced points
-#  symmetric with respect to the origin.
-#
-#  Input:
-#  f:    Vector of samples of f[x] at h*[-(N-1)/2:(N-1)/2]
-#  M:    Number of derivatives required [integer].
-#  h:    Step-size (real, positive).
-#
-#  Note:  0 < M .< N-1.
-#
-#  Output:
-#  Dmf:   m-th derivative of f
-#
-#  J.A.C. Weideman; S.C. Reddy 2000.   Corrected for complex data
-#  by JACW; April 2003. 
+"""
+    sincdifft(f, M, h)
+    
+Computes the m-th derivative of the function f[x] using the sinc differentiation process. 
+The function is assumed to be defined on the entire real line & the input values
+correspond to samples of the function at N equispaced points
+symmetric with respect to the origin.
+
+# Arguments
+- f: vector of samples of f[x] at h*[-(N-1)/2:(N-1)/2]
+- M: number of derivatives required [integer]. Note that M must satisfy, 0 < M < N-1.
+- h: step-size (real, positive).
+
+# Outputs
+- Dmf: m-th derivative of f
+"""
+function sincdifft(f, M, h)
     
     f = f[:]'                 # Ensure f is a row vector
     N = length(f)     

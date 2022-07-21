@@ -1,24 +1,23 @@
 using LinearAlgebra
 using ToeplitzMatrices
 
-function sincdif(N, M, h)
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
 
-#  The function [x, DM] = sincdif(N, M, h) computes sinc the
-#  differentiation matrices D1; D2; ...; DM on equidistant points.
-#
-#  Input:
-#  N:    Number of points; i.e.; order of differentiation matrix.
-#  M:    Number of derivatives required [integer].
-#  h:    Step-size (real, positive).
-#
-#  Note:  0 < M .< N-1.
-#
-#  Output:
-#  x:    Vector of nodes.
-#  DM:   DM[1:N,1:N,l] contains l-th derivative matrix, l=1..M.
-#
-#  J.A.C. Weideman; S.C. Reddy 1998.  Help lines corrected 
-#  by JACW; March/April 2003.
+"""
+    sincdif(N, M, h)
+    
+Computes sinc the differentiation matrices D^1, D^2, ..., D^M on equidistant points.
+
+# Arguments
+- N: number of points; i.e.; order of differentiation matrix.
+- M: number of derivatives required [integer]. Note that M must satisfy, 0 < M < N-1.
+- h: step-size (real, positive).
+
+# Outputs
+- x:  vector of nodes.
+- DM: DM[1:N,1:N,ell] contains ell-th derivative matrix, ell=1,...,M.
+"""
+function sincdif(N, M, h)
     
     k = 1:N-1
     t = k*pi

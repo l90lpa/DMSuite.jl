@@ -1,21 +1,21 @@
+
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+"""
+    herdif(N, M, b)
+
+Computes the differentiation matrices D^1, D^2, ..., D^M on Hermite points.
+
+# Arguments
+- N: number of points, i.e., order of differentiation matrices [integer].
+- M: number of derivatives required [integer]. Note that M must satisfy, 0 < M < N-1.
+- b: scaling parameter [real, positive].
+
+# Outputs
+- x:    vector of nodes (zeros of Hermite polynomial of degree N scaled by the parameter b.)
+- DM:   DM[1:N,1:N,ell] contains ell-th derivative matrix, ell=1,..,M.
+"""
 function herdif(N, M, b)
 
-#  The function [x, DM] = herdif(N, M, b) computes the
-#  differentiation matrices D1; D2; ...; DM on Hermite points.
-#
-#  Input:
-#  N:    Number of points, i.e., order of differentiation matrices [integer].
-#  M:    Number of derivatives required [integer].
-#  b:    Scaling parameter [real, positive].
-#
-#  Note:  0 < M .< N-1.
-#
-#  Output:
-#  x:    Vector of nodes (zeros of Hermite polynomial of degree N
-#        scaled by the parameter b.)
-#  DM:   DM[1:N,1:N,l] contains l-th derivative matrix, l=1..M.
-#
-#  J.A.C Weideman; S.C. Reddy 1998.
     
     x = herroots(N)                      # Compute Hermite roots.
     

@@ -1,21 +1,20 @@
-function lagdif(N, M, b)
 
-#  The function [x, DM] = lagdif(N, M, b) computes the
-#  differentiation matrices D1; D2; ...; DM on Laguerre points.
-#
-#  Input:
-#  N:    Number of points, i.e., order of differentiation matrices [integer].
-#  M:    Number of derivatives required [integer].
-#  b:    Scaling parameter [real, positive].
-#
-#  Note:  0 < M .< N-1.
-#
-#  Output:
-#  x:    Vector of nodes (zeros of Laguerre polynomial of degree N-1
-#        plus x = 0); all scaled by the parameter b.
-#  DM:   DM[1:N,1:N,l] contains l-th derivative matrix, l=1..M.
-#
-#  J.A.C. Weideman; S.C. Reddy 1998.
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+"""
+    lagdif(N, M, b)
+    
+Computes the differentiation matrices D^1, D^2, ..., D^M on Laguerre points.
+
+# Arguments
+- N: number of points, i.e., order of differentiation matrices [integer].
+- M: number of derivatives required [integer]. Note that M must satisfy, 0 < M < N-1.
+- b: scaling parameter [real, positive].
+
+# Outputs
+- x: vector of nodes (zeros of Laguerre polynomial of degree N-1 plus x = 0), all scaled by the parameter b.
+- DM: DM[1:N,1:N,ell] contains ell-th derivative matrix, ell=1,...,M.
+"""
+function lagdif(N, M, b)
      
     x = lagroots(N-1)                    # Compute Laguerre roots()
     x = [0; x]                           # Add a node at x=0 to facilitate the implementation of BCs.

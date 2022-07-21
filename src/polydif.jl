@@ -1,25 +1,23 @@
 using LinearAlgebra
 
+# Originally implemented in Matlab by S.C. Reddy & J.A.C. Weideman, implemented in Julia by L.P. Adams
+
+"""
+    poldif(x, alpha, B)
+
+Computes the differentiation matrices D^1, D^2, ..., D^M on arbitrary nodes, x, with associated weights, alpha.
+
+# Arguments
+- x: vector of N distinct nodes.
+- alpha: vector of weight values alpha(x), evaluated at x = x[k].
+- B: matrix of size M x N;  where M is the highest derivative required.  It should contain the quantities 
+B[ell,j] = beta(ell,j) = (ell-th derivative of alpha(x[j]))/alpha(x[j]). Note that M must satisfy, 0 < M < N-1.
+
+# Outputs
+- DM: DM[1:N,1:N,ell] contains ell-th derivative matrix, ell=1,...,M.
+"""
 function poldif(x, alpha, B)
 
-#  The function DM =  poldif(x, maplha, B) computes the
-#  differentiation matrices D1; D2; ...; DM on arbitrary nodes with associated weights.
-#
-#  Input:
-#
-#  x:        Vector of N distinct nodes.
-#  alpha:    Vector of weight values alpha(x), evaluated at x = x[k].
-#  B:        Matrix of size M x N;  where M is the highest 
-#            derivative required.  It should contain the quantities 
-#            B[ell,j] = beta(ell,j) = (ell-th derivative
-#            of alpha(x))/alpha(x),   evaluated at x = x[j].
-#
-#  Note:     0 < M .< N-1.
-#
-#  Output:
-#  DM:       DM[1:N,1:N,ell] contains ell-th derivative matrix, ell=1..M.
-#
-#  J.A.C. Weideman; S.C. Reddy 1998
 
     N = length(x)                      
     x = x[:]                     # Make sure x is a column vector 
@@ -57,27 +55,24 @@ function poldif(x, alpha, B)
     return DM
 end
 
-function poldif(x, M)
+"""
+    poldif(x, M)
+    
+Computes the differentiation matrices D^1, D^2, ..., D^M on arbitrary nodes, x, with unit weights.
 
-#  The function DM =  poldif(x, maplha) computes the
-#  differentiation matrices D1; D2; ...; DM on arbitrary nodes with unit weights.
-#
-#  Input:
-#
-#  x:        Vector of N distinct nodes.
-#  M:        The number of derivatives required [integer]
-#
-#  Note:     0 < M .< N-1.
-#
-#  Output:
-#  DM:       DM[1:N,1:N,ell] contains ell-th derivative matrix, ell=1..M.
-#
-#  J.A.C. Weideman; S.C. Reddy 1998
+# Arguments
+- x: vector of N distinct nodes.
+- M: the number of derivatives required [integer]. Note that M must satisfy, 0 < M < N-1.
+
+# Outputs
+- DM: DM[1:N,1:N,ell] contains ell-th derivative matrix, ell=1,...,M.
+"""
+function poldif(x, M)
 
     N = length(x)                      
 
     alpha = ones(N)              
-    B = zeros(M,N)
+    B = zeros(Float64,M,N)
 
     return poldif(x, alpha, B)
 end
