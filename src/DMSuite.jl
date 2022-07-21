@@ -2,7 +2,7 @@ module DMSuite
 
 export chebdif, chebdifft, chebint, cheb2bc, cheb4c, 
        fourdif, fourdifft, fourint, sincdif, sincdifft, 
-       herroots, lagroots, legroots, polydif, polyint, 
+       herroots, lagroots, legroots, poldif, polint, 
        herdif, lagdif
     
     include("chebdif.jl")
@@ -22,8 +22,8 @@ export chebdif, chebdifft, chebint, cheb2bc, cheb4c,
     include("lagroots.jl")
     include("legroots.jl")
 
-    include("polydif.jl")
-    include("polyint.jl")
+    include("poldif.jl")
+    include("polint.jl")
 
     include("herdif.jl")
     include("lagdif.jl")
