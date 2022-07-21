@@ -24,7 +24,6 @@ aN u[-1] + bN u'[-1] = cN
 """
 function cheb2bc(N,g)
 
-
     # Get differentiation matrices
 
     x,DM = chebdif(N,2)
@@ -43,15 +42,15 @@ function cheb2bc(N,g)
     D2t = Matrix{Float64}(undef, N, N)
     phip = Vector{Float64}(undef, N);          # phi_+
     phim = Vector{Float64}(undef, N);          # phi_- 
-    xt = Vector{Float64}(undef, N);                               # node vector
+    xt = Vector{Float64}(undef, N);            # node vector
 
     # Case 0: Invalid boundary condition information
 
-    if ((a1 == 0 && b1 == 0) || (aN == 0 && bN == 0))
+    @assert ((a1 == 0 && b1 == 0) || (aN == 0 && bN == 0)) "Invalid boundary condition information"
 
-        print("Invalid boundary condition information [no output] \n")
+    if (b1 == 0 && bN == 0)
 
-    elseif (b1 == 0 && bN == 0)          # Dirichlet/Dirichlet 
+        # Case 2: Dirichlet at both endpoints.
 
         J=2:N-1
         K=2:N-1
@@ -61,7 +60,9 @@ function cheb2bc(N,g)
         phim=cN*[D1[K,N] D2[K,N]]/aN;          # phi_- 
         xt=x[K];                               # node vector 
 
-    elseif (b1 != 0 && bN == 0)         # Dirichlet x=-1, Robin x=1
+    elseif (b1 != 0 && bN == 0)
+
+        # Case 2: Neumann or Robin at x=1, and Dirichlet at x=-1.
 
         J=2:N-1
         K=1:N-1
@@ -91,7 +92,7 @@ function cheb2bc(N,g)
 
     elseif (b1 == 0 && bN != 0)
 
-    # Case 3: Dirichlet at x=1 & Neumann | Robin boundary x=-1.
+        # Case 3: Dirichlet at x=1, and Neumann or Robin boundary x=-1.
 
         J=2:N-1 
         K=2:N
@@ -120,7 +121,7 @@ function cheb2bc(N,g)
 
     elseif (b1 != 0 && bN != 0)
 
-    # Case 4: Neumann | Robin boundary conditions at both endpoints. 
+        # Case 4: Neumann or Robin boundary conditions at both endpoints. 
 
         J=2:N-1
         K=1:N
