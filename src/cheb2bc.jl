@@ -1,5 +1,3 @@
-using LinearAlgebra
-include("chebdif.jl")
 
 
 """
