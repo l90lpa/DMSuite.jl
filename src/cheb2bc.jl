@@ -46,7 +46,7 @@ function cheb2bc(N,g)
 
     # Case 0: Invalid boundary condition information
 
-    @assert ((a1 == 0 && b1 == 0) || (aN == 0 && bN == 0)) "Invalid boundary condition information"
+    @assert !((a1 == 0 && b1 == 0) || (aN == 0 && bN == 0)) "Invalid boundary condition information"
 
     if (b1 == 0 && bN == 0)
 
