@@ -20,15 +20,15 @@ Computes the polynomial interpolant of the data [xk, fk] under the provided weig
 # Details
 The code implements the barycentric formula; see page 252 in
 P. Henrici; Essentials of Numerical Analysis; Wiley; 1982.
-(Note that if some fk .> 1/eps, with eps the machine epsilon
-the value of eps in the code may have to be reduced.)
+
 Except for certain nice node distributions
 polynomial interpolation of high-degree is an ill-conditioned
 problem.  This code does not test for conditioning so use with
 care.
 """
 function polint(xk, fk, x, alpxk, alpx)
-
+    # Note: that if some fk > 1/eps, with eps the machine epsilon
+    # the value of eps in the code may have to be reduced
     
     fk = fk./alpxk
     
