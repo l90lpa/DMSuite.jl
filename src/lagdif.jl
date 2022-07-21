@@ -3,7 +3,7 @@
 """
     lagdif(N, M, b)
     
-Computes the differentiation matrices D^1, D^2, ..., D^M on Laguerre points.
+Computes the differentiation matrices D1, D2, ..., DM on Laguerre points.
 
 # Arguments
 - N: number of points, i.e., order of differentiation matrices [integer].

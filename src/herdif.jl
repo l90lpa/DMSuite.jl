@@ -3,7 +3,7 @@
 """
     herdif(N, M, b)
 
-Computes the differentiation matrices D^1, D^2, ..., D^M on Hermite points.
+Computes the differentiation matrices D1, D2, ..., DM on Hermite points.
 
 # Arguments
 - N: number of points, i.e., order of differentiation matrices [integer].

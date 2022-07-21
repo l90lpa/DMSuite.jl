@@ -16,7 +16,7 @@ xk are equidistant nodes, at the points x. Requires two or more data points
 # Details
 The code implements the barycentric formula; see page 46 in
 P. Henrici; Applied & Computational Complex Analysis III; Wiley; 1986.
-(Note that if some fk .> 1/eps, with eps the machine epsilon
+(Note that if some fk > 1/eps, with eps the machine epsilon
 the value of eps in the code may have to be reduced.)
 """
 function fourint(fk, x)

@@ -8,14 +8,14 @@ include("chebdif.jl")
 Computes the first and second derivative matrices, as well as boundary condition functions, 
 for 2 point boundary conditions:
 
-a_1 u[1]  + b_1 u'(1)  = c_1
+a1 u[1]  + b1 u'[1]  = c1
 
-a_N u[-1] + b_N u'(-1) = c_N
+aN u[-1] + bN u'[-1] = cN
 
 
 # Arguments 
 - N:  number of Chebyshev points in [-1,1]
-- g:  boundary condition matrix = [a_1 b_1 c_1; a_N b_N c_N]
+- g:  boundary condition matrix = [a1 b1 c1; aN bN cN]
 
 # Outputs  
 - xt:  Chebyshev points corresponding to rows and columns of D1t & D2t

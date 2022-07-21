@@ -23,9 +23,9 @@ computes the first column and first row & then uses the
 toeplitz command to create the matrix.
 For M=1 & 2 the code implements a "flipping trick" to
 improve accuracy suggested by W. Don & A. Solomonoff in 
-SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 [1994].
+SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 (1994).
 The flipping trick is necesary since sin t can be computed to high
-relative precision when t is small whereas sin (pi-t) cannot.
+relative precision when t is small whereas sin(pi-t) cannot.
 """
 function fourdif(N,M)
      

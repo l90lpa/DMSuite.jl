@@ -5,7 +5,7 @@ using LinearAlgebra
 """
     poldif(x, alpha, B)
 
-Computes the differentiation matrices D^1, D^2, ..., D^M on arbitrary nodes, x, with associated weights, alpha.
+Computes the differentiation matrices D1, D2, ..., DM on arbitrary nodes, x, with associated weights, alpha.
 
 # Arguments
 - x: vector of N distinct nodes.
@@ -58,7 +58,7 @@ end
 """
     poldif(x, M)
     
-Computes the differentiation matrices D^1, D^2, ..., D^M on arbitrary nodes, x, with unit weights.
+Computes the differentiation matrices D1, D2, ..., DM on arbitrary nodes, x, with unit weights.
 
 # Arguments
 - x: vector of N distinct nodes.

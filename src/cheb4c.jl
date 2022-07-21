@@ -7,24 +7,24 @@ using LinearAlgebra
 Computes the fourth derivative matrix on Chebyshev interior points, incorporating 
 the clamped boundary conditions:
 
-u[1]=u"(1)=u[-1]=u"(-1)=0.
+u[1]=u"[1]=u[-1]=u"[-1]=0.
 
 # Arguments
 - N:     N-2 = order of differentiation matrix. (The interpolant has degree N+1.)
 
 # Outputs
 - x:      interior Chebyshev points [vector of length N-2]
-- D4:     fourth derivative matrix  [size (N-2)x[N-2]]
+- D4:     fourth derivative matrix  [size (N-2)x(N-2)]
 
 # Details
 The code implements two strategies for enhanced 
 accuracy suggested by W. Don & S. Solomonoff in 
-SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 [1994].
-The two strategies are [a] the use of trigonometric 
+SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 (1994).
+The two strategies are (a) the use of trigonometric 
 identities to avoid the computation of differences 
-x[k]-x[j] & [b] the use of the "flipping trick"
+x[k]-x[j] & (b) the use of the "flipping trick"
 which is necessary since sin t can be computed to high
-relative precision when t is small whereas sin (pi-t) cannot.
+relative precision when t is small whereas sin(pi-t) cannot.
 """
 function cheb4c(N)
 

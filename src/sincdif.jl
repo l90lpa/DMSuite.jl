@@ -6,7 +6,7 @@ using ToeplitzMatrices
 """
     sincdif(N, M, h)
     
-Computes sinc the differentiation matrices D^1, D^2, ..., D^M on equidistant points.
+Computes sinc the differentiation matrices D1, D2, ..., DM on equidistant points.
 
 # Arguments
 - N: number of points; i.e.; order of differentiation matrix.

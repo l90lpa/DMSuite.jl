@@ -5,7 +5,7 @@ using ToeplitzMatrices
 """
     chebdif(N, M)
 
-Computes the differentiation matrices D^1, D^2, ..., D^M on Chebyshev nodes. 
+Computes the differentiation matrices D1, D2, ..., DM on Chebyshev nodes. 
 
 # Arguments 
 - N:        size of differentiation matrix.        
@@ -18,17 +18,16 @@ Computes the differentiation matrices D^1, D^2, ..., D^M on Chebyshev nodes.
 # Details 
 The code implements two strategies for enhanced 
 accuracy suggested by W. Don & S. Solomonoff in 
-SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 [1994].
-The two strategies are [a] the use of trigonometric 
+SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 (1994).
+The two strategies are (a) the use of trigonometric 
 identities to avoid the computation of differences 
-x[k]-x[j] & [b] the use of the "flipping trick"
+x[k]-x[j] & (b) the use of the "flipping trick"
 which is necessary since sin t can be computed to high
-relative precision when t is small whereas sin (pi-t) cannot.
-Note added May 2003:  It may; in fact; be slightly better not to
-implement the strategies [a] & [b].   Please consult the following
-paper for details:   "Spectral Differencing with a Twist"; by
-R. Baltensperger & M.R. Trummer; to appear in SIAM J. Sci. Comp. 
-J.A.C. Weideman; S.C. Reddy 1998.
+relative precision when t is small whereas sin(pi-t) cannot.
+Note: It may, in fact, be slightly better not to
+implement the strategies (a) & (b).   Please consult the following
+paper for details:   "Spectral Differencing with a Twist", by
+R. Baltensperger & M.R. Trummer, to appear in SIAM J. Sci. Comp.
 """
 function chebdif(N, M)
 

@@ -17,7 +17,7 @@ Requires two or more data points.
 # Details
 The code implements the barycentric formula; see page 252 in
 P. Henrici; Essentials of Numerical Analysis; Wiley; 1982.
-(Note that if some fk .> 1/eps, with eps the machine epsilon
+(Note that if some fk > 1/eps, with eps the machine epsilon
 the value of eps in the code may have to be reduced.)
 """
 function chebint(fk, x)
