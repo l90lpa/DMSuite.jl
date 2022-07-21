@@ -14,6 +14,7 @@ function cheb1Roots(N)
         x[div(N-1,2)+2:end] = -reverse(x[1:div(N-1,2)])
         x[div(N-1,2)+1] = 0.0
     end
+
     x
 end
 
@@ -26,5 +27,5 @@ Computes the extrama of the Chebyshev polynomial of the first kind of degree N. 
 """
 function cheb1Extrema(N)
     N += 1
-    (sin.(pi * (N-1:-2:1-N) / (2*(N-1))))
+    sin.(pi * (N-1:-2:1-N) / (2*(N-1)))
 end

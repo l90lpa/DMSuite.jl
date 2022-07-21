@@ -11,6 +11,4 @@ function legroots(N);
     d = n ./ sqrt.(4*n .^ 2 .- 1)    #  Create subdiagonals
     J = SymTridiagonal(zeros(N), d) # Jacobi matrix
     r = eigvals(J)                  #  Compute eigenvalues
-
-    r
 end

@@ -46,9 +46,6 @@ function polint(xk, fk, x, alpxk, alpx)
     D = 1 ./ (D .+ (eps() * (D==0)))                 
   
     p = alpx .* (D*(w .* fk) ./ (D*w))    # Evaluate interpolant as matrix-vector products.
-                                            
-
-    p
 end
 
 """
