@@ -45,7 +45,7 @@ function createTest(file, session, tolerance, outCount, funcname, args)
     write(file,"\n")
     
     # add Julia function evaluation
-    write(file,join(outNames,",")*"="*"DMSuite."*funcname*"("*join(argNames,",")*")\n")
+    write(file,join(outNames,",")*"="*funcname*"("*join(argNames,",")*")\n")
     write(file,"\n")
 
     # split any output variable that is a three dimensional array (into multiple matrices)

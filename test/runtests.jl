@@ -13,7 +13,7 @@ test_out2_2=[160.00000000000026 -258.59202799568067 147.07733828335103 -78.27241
 arg1=8
 arg2=2
 
-out1,out2=DMSuite.chebdif(arg1,arg2)
+out1,out2=chebdif(arg1,arg2)
 
 out2_1=out2[:,:,1]
 out2_2=out2[:,:,2]
@@ -31,7 +31,7 @@ test_out1=[-4.0; -4.0; -4.0; -4.0]
 arg1=[1.0 2.0 3.0 4.0]
 arg2=3
 
-out1=DMSuite.chebdifft(arg1,arg2)
+out1=chebdifft(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 
@@ -44,7 +44,7 @@ test_out1=[4.000000000000002; 4.591640786499873; 3.3; 2.8083592135001263; 0.9999
 arg1=[1.0 2.0 3.0 4.0 5.0 4.0]
 arg2=[-1.0 -0.5 0.0 0.5 1.0]
 
-out1=DMSuite.chebint(arg1,arg2)
+out1=chebint(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 
@@ -61,7 +61,7 @@ test_out5=[0.2630237709004217 -1.535529789781714; -0.30797852836990414 0.6935432
 arg1=8
 arg2=[1.0 0.0 1.0; 1.0 0.0 1.0]
 
-out1,out2,out3,out4,out5=DMSuite.cheb2bc(arg1,arg2)
+out1,out2,out3,out4,out5=cheb2bc(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -82,7 +82,7 @@ test_out5=[-0.0 0.5; 0.013023770900421755 -0.33905639762624346; -0.0579785283699
 arg1=8
 arg2=[0.0 1.0 1.0; 1.0 0.0 1.0]
 
-out1,out2,out3,out4,out5=DMSuite.cheb2bc(arg1,arg2)
+out1,out2,out3,out4,out5=cheb2bc(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -103,7 +103,7 @@ test_out5=[0.5 -2.3929467843109413; -0.5 0.5100033746178891; 0.4999999999999999 
 arg1=8
 arg2=[1.0 0.0 1.0; 0.0 1.0 1.0]
 
-out1,out2,out3,out4,out5=DMSuite.cheb2bc(arg1,arg2)
+out1,out2,out3,out4,out5=cheb2bc(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -124,7 +124,7 @@ test_out5=[-0.0 1.0; 0.024757783024395214 -0.618488114549789; -0.094127549535316
 arg1=8
 arg2=[1.0 1.0 1.0; 1.0 1.0 1.0]
 
-out1,out2,out3,out4,out5=DMSuite.cheb2bc(arg1,arg2)
+out1,out2,out3,out4,out5=cheb2bc(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -141,7 +141,7 @@ test_out2=[120868.4986236456 -21490.71483415044 6579.996533792888 -3263.08657865
 
 arg1=9
 
-out1,out2=DMSuite.cheb4c(arg1)
+out1,out2=cheb4c(arg1)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -156,7 +156,7 @@ test_out2=[1.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0; 0.0 1.0 0.0 0.0 0.0 0.0 0.0 0.0; 0.0
 arg1=8
 arg2=0
 
-out1,out2=DMSuite.fourdif(arg1,arg2)
+out1,out2=fourdif(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -171,7 +171,7 @@ test_out2=[0.0 1.2071067811865475 -0.5000000000000001 0.20710678118654754 -3.061
 arg1=8
 arg2=1
 
-out1,out2=DMSuite.fourdif(arg1,arg2)
+out1,out2=fourdif(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -186,7 +186,7 @@ test_out2=[0.0 1.4619022000815438 -0.7778619134302063 0.5773502691896258 -0.5077
 arg1=9
 arg2=1
 
-out1,out2=DMSuite.fourdif(arg1,arg2)
+out1,out2=fourdif(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -201,7 +201,7 @@ test_out2=[-5.500000000000001 3.4142135623730954 -1.0000000000000002 0.585786437
 arg1=8
 arg2=2
 
-out1,out2=DMSuite.fourdif(arg1,arg2)
+out1,out2=fourdif(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -216,7 +216,7 @@ test_out2=[-6.666666666666668 4.016543284175075 -0.9270197298726547 0.3333333333
 arg1=9
 arg2=2
 
-out1,out2=DMSuite.fourdif(arg1,arg2)
+out1,out2=fourdif(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -231,7 +231,7 @@ test_out2=[0.0 -6.949747468305833 6.5 -2.9497474683058327 -0.0 2.949747468305832
 arg1=8
 arg2=3
 
-out1,out2=DMSuite.fourdif(arg1,arg2)
+out1,out2=fourdif(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 1.0e-15
@@ -246,7 +246,7 @@ test_out2=[0.0 -11.954049935290406 13.511138671666844 -10.969655114602888 9.8767
 arg1=9
 arg2=3
 
-out1,out2=DMSuite.fourdif(arg1,arg2)
+out1,out2=fourdif(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 5.0e-15
 @test maximum(abs.(test_out2 - out2)) <= 5.0e-15
@@ -260,7 +260,7 @@ test_out1=[6.3508529610858835; -9.237604307034012; 2.886751345948129; 2.88675134
 arg1=[1.0 2.0 3.0 4.0 5.0 6.0]
 arg2=3
 
-out1=DMSuite.fourdifft(arg1,arg2)
+out1=fourdifft(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 
@@ -273,7 +273,7 @@ test_out1=[0.9999999999999986; 0.5823478907700207; 0.7305336405049841; 1.2551237
 arg1=[1.0 2.0 3.0 4.0 5.0 6.0]
 arg2=[0.0 0.25 0.5 0.75 1.0]
 
-out1=DMSuite.fourint(arg1,arg2)
+out1=fourint(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 
@@ -286,7 +286,7 @@ test_out1=[0.999999999999999; 0.657207879458495; 0.6488319919219218; 0.935272895
 arg1=[1.0 2.0 3.0 4.0 5.0]
 arg2=[0.0 0.25 0.5 0.75 1.0]
 
-out1=DMSuite.fourint(arg1,arg2)
+out1=fourint(arg1,arg2)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 
@@ -302,7 +302,7 @@ arg1=9
 arg2=2
 arg3=0.5
 
-out1,out2=DMSuite.sincdif(arg1,arg2,arg3)
+out1,out2=sincdif(arg1,arg2,arg3)
 
 out2_1=out2[:,:,1]
 out2_2=out2[:,:,2]
@@ -321,7 +321,7 @@ arg1=[1.0 2.0 3.0 4.0 5.0]
 arg2=2
 arg3=0.5
 
-out1=DMSuite.sincdifft(arg1,arg2,arg3)
+out1=sincdifft(arg1,arg2,arg3)
 
 @test maximum(abs.(test_out1 - out1)) <= 5.0e-15
 
@@ -333,7 +333,7 @@ test_out1=[-2.930637420257245; -1.9816567566958425; -1.1571937124467802; -0.3811
 
 arg1=8
 
-out1=DMSuite.herroots(arg1)
+out1=herroots(arg1)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 
@@ -345,7 +345,7 @@ test_out1=[0.1702796323051012; 0.9037017767993805; 2.2510866298661307; 4.2667001
 
 arg1=8
 
-out1=DMSuite.lagroots(arg1)
+out1=lagroots(arg1)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 
@@ -357,7 +357,7 @@ test_out1=[-0.9602898564975364; -0.7966664774136268; -0.525532409916329; -0.1834
 
 arg1=8
 
-out1=DMSuite.legroots(arg1)
+out1=legroots(arg1)
 
 @test maximum(abs.(test_out1 - out1)) <= 1.0e-15
 
@@ -373,7 +373,7 @@ arg1=8
 arg2=2
 arg3=0.7
 
-out1,out2=DMSuite.herdif(arg1,arg2,arg3)
+out1,out2=herdif(arg1,arg2,arg3)
 
 out2_1=out2[:,:,1]
 out2_2=out2[:,:,2]
@@ -394,7 +394,7 @@ arg1=8
 arg2=2
 arg3=0.7
 
-out1,out2=DMSuite.lagdif(arg1,arg2,arg3)
+out1,out2=lagdif(arg1,arg2,arg3)
 
 out2_1=out2[:,:,1]
 out2_2=out2[:,:,2]
