@@ -7,3 +7,6 @@ makedocs(sitename="DMSuite.jl",
                   "Library" => "api.md",
                   "References" => "references.md"]
         )
+
+deploydocs(repo = "github.com/l90lpa/DMSuite.jl.git", versions = nothing)
+        
