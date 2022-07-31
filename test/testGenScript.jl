@@ -4,7 +4,7 @@ using MATLAB
 # directory as this script
 MATLAB_DMSUITE_DIR = (@__DIR__)*"/dmsuite"
 
-FFT_PACKAGE = "FFTW"
+FFT_PACKAGE = "FastTransforms"
 
 
 
