@@ -10,8 +10,8 @@ chebdifft
 chebint
 cheb2bc
 cheb4c
-cheb1Roots
-cheb1Extrema
+cheb1roots
+cheb1extrema
 ```
 
 ## Hermite, Laguerre, and Legendre

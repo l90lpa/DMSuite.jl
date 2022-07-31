@@ -33,7 +33,7 @@ function chebdif(N, M)
     k = (0:N-1)                                      # Compute theta vector.
     th = k*pi/(N-1)
     
-    x = cheb1Extrema(N-1)
+    x = cheb1extrema(N-1)
     
     T = repeat(th/2,1,N);                
     DX = 2 * sin.(T'+T) .* sin.(T'-T);               # Trigonometric identity. 

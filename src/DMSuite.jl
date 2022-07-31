@@ -4,7 +4,7 @@ using LinearAlgebra
 using ToeplitzMatrices
 using AbstractFFTs
 
-export cheb1Roots, cheb1Extrema, chebdif, chebdifft, chebint, cheb2bc, cheb4c, 
+export cheb1roots, cheb1extrema, chebdif, chebdifft, chebint, cheb2bc, cheb4c, 
        fourdif, fourdifft, fourint, sincdif, sincdifft, 
        herroots, lagroots, legroots, poldif, polint, 
        herdif, lagdif

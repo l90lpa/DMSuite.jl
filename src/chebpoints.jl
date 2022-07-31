@@ -1,11 +1,11 @@
 
 """
-    cheb1Roots(N)
+    cheb1roots(N)
 
 Computes the roots of the Chebyshev polynomial of the first kind of degree N. AKA, Chebyshev-Gauss (CG) Points, or 
 Chebyshev points of the first kind.
 """
-function cheb1Roots(N)
+function cheb1roots(N)
     
     x = cos.(pi .* (2 .* (1:N) .- 1) ./ (2*N))
 
@@ -22,12 +22,12 @@ end
 
 
 """
-    cheb1Extrema(N)
+    cheb1extrema(N)
 
 Computes the extrama of the Chebyshev polynomial of the first kind of degree N. AKA, Chebyshev-Gauss-Lobatto (CGL) Points, or 
 Chebyshev points of the second kind.
 """
-function cheb1Extrema(N)
+function cheb1extrema(N)
     N += 1
     sin.(pi * (N-1:-2:1-N) / (2*(N-1)))
 end

@@ -27,7 +27,7 @@ function chebint(fk, x)
     N = length(fk); 
     M = length(x)
          
-    xk = cheb1Extrema(N-1)
+    xk = cheb1extrema(N-1)
     
     w = Vector((-1.0) .^ (0:N-1));              # w = weights for Chebyshev formula
     w[1] = w[1]/2; w[N] = w[N]/2
