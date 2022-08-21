@@ -8,5 +8,5 @@ makedocs(sitename="DMSuite.jl",
                   "References" => "references.md"]
         )
 
-deploydocs(repo = "github.com/l90lpa/DMSuite.jl.git", versions = nothing)
+deploydocs(repo = "github.com/l90lpa/DMSuite.jl.git", versions = ["v#.#"])
         

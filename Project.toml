@@ -1,7 +1,7 @@
 name = "DMSuite"
 uuid = "3330cf8c-b8ed-4216-8191-cc5c6f928152"
 authors = ["Liam Adams <liam1540@googlemail.com>"]
-version = "0.1.0"
+version = "1.0.0"
 
 [deps]
 AbstractFFTs = "621f4979-c628-5d54-868e-fcf4e3e8185c"
