@@ -22,7 +22,7 @@ SIAM J. Sci. Comp. Vol. 6, pp. 1253--1268 (1994).
 The two strategies are (a) the use of trigonometric 
 identities to avoid the computation of differences 
 x[k]-x[j] & (b) the use of the "flipping trick"
-which is necessary since sin t can be computed to high
+which is necessary since sin(t) can be computed to high
 relative precision when t is small whereas sin(pi-t) cannot.
 """
 function cheb4c(N)
