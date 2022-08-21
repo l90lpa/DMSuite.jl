@@ -6,10 +6,15 @@ Spectral differentiation and interpolation methods under various bases (Chebyshe
 
 For information on spectral methods one could consult, __Spectral Methods in Matlab__ (by L.N. Trefethen) for a more practical introduction, and/or __Spectral Methods: Fundamentals in Single Domains__ (by C. Canuto, M.Y. Hussaini, A. Quarteroni, T.A. Zang) for a more theoretical treatment.
 
+## Usage
+
+DMSuite does not depend on a specific FFT implementation, instead it is built against the abstract interface [AbstractFFTs.jl](https://github.com/JuliaMath/AbstractFFTs.jl). Therefore to use a method such as `chebdifft`, one must install and load an FFT implementation such as [FFTW.jl](https://github.com/JuliaMath/FFTW.jl) or [FastTransforms.jl](https://github.com/JuliaApproximation/FastTransforms.jl).
+
 ## Example
 
-Solve the BVP: $u'' = \exp(4x)$ subject to $u(-1)=u(1)=0$
+Solve the BVP: $u'' = \exp(4x)$, subject to the BCs,  $u(-1)=u(1)=0$
 ```julia
+using FastTransforms
 using DMSuite
 using Plots
 
