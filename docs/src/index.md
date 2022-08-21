@@ -4,7 +4,7 @@ Spectral differentiation and interpolation methods under various bases (Chebyshe
 
 ## Theory of Spectral Methods
 
-For information on spectral methods I recommend consulting __Spectral Methods in Matlab__ (by L.N. Trefethen) and/or __Spectral Methods: Fundamentals in Single Domains__ (by C. Canuto, M.Y. Hussaini, A. Quarteroni, T.A. Zang)
+For information on spectral methods one could consult, __Spectral Methods in Matlab__ (by L.N. Trefethen) for a more practical introduction, and/or __Spectral Methods: Fundamentals in Single Domains__ (by C. Canuto, M.Y. Hussaini, A. Quarteroni, T.A. Zang) for a more theoretical treatment.
 
 ## Example
 
